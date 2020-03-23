@@ -1,0 +1,20 @@
+<view class="container">
+  <view class='subject_container' bindtap="goToChoose">
+    <image src="/static/images/subject.png"></image>
+    <text bindtap="goToChoose">{{levelDesc + " " +subjectTitle}}</text>
+    <image src="/static/images/subject2.png"></image>
+  </view>
+
+  <view class="list">
+
+    <view class="item" wx:for="{{list}}" wx:key="levelId" wx:for-item="item" data-levelId="{{item.levelId}}" data-subjectId="{{item.subjectId}}" data-sheetId="{{item.sheetId}}" data-levelDesc="{{item.levelDesc}}" data-subjectTitle="{{item.subjectTitle}}"
+      bindtap="select">
+
+      <text class="sheet_textarea" hover-class="hover">{{item.sheetTitle}}</text>
+    </view>
+
+
+
+  </view>
+
+</view>

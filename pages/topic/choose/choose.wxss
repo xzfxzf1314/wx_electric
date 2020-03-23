@@ -1,0 +1,58 @@
+page {
+  height: 100%;
+  background: #f4f4f4;
+}
+
+.list {
+  padding-top: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.list .item {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  /* border-top: 1px solid #d9d9d9; */
+  margin: auto;
+  justify-content: center;
+  height: 100rpx;
+  width: 710rpx;
+}
+
+.list .item .btn {
+  background: white;
+  border-radius: 5px;
+  border-width: 0px;
+  width: 100%;
+  font-size: 35rpx;
+  align-items: center;
+  
+}
+
+.list .item .btn-select {
+  background: red;
+  color: white;
+  border-radius: 5px;
+  border-width: 0px;
+  width: 100%;
+  font-size: 35rpx;
+  align-items: center;
+  
+}
+
+.list .item .btn::after{
+  border: none;
+}
+
+.list .item .btn.hover {
+  color: white;
+  background-color: red;
+  /* border-color: red; */
+  /* border: red; */
+}
+
+.list .item .btn.hover::after {
+  border: red;
+  border-color: red;
+}

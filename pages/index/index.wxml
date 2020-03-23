@@ -1,0 +1,70 @@
+<!--index.wxml-->
+<view class="container">
+  <swiper class="banner" catchtap="onSwiperItemClick" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
+    <swiper-item wx:for="{{banner}}" wx:key="id">
+      <image src="{{item.url}}" data-postId="{{item.link}}" background-size="cover"></image>
+    </swiper-item>
+  </swiper>
+  
+  <view class="m-menu">
+    <navigator class="item" bindtap="goNewerArea">
+      <image src="/static/images/home.png" background-size="cover"></image>
+      <text>新手专区</text>
+    </navigator>
+
+    <navigator class="item" bindtap="goTopic">
+      <image src="/static/images/home.png" background-size="cover"></image>
+      <text>考试题库</text>
+    </navigator>
+
+    <navigator class="item">
+      <image src="/static/images/home.png" background-size="cover"></image>
+      <text>考试规范</text>
+    </navigator>
+
+    <navigator class="item">
+      <image src="/static/images/home.png" background-size="cover"></image>
+      <text>经验分享</text>
+    </navigator>
+
+    <navigator class="item">
+      <image src="/static/images/home.png" background-size="cover"></image>
+      <text>课程</text>
+    </navigator>
+
+  </view>
+
+  <view class="a-section a-groupon" wx:if="{{groupons.length > 0}}">
+    <view class="h">
+      <view class="title">
+        <view>
+          <navigator url="/pages/groupon/grouponList/grouponList">
+            <text class="txt">课程推荐</text>
+          </navigator>
+        </view>
+      </view>
+    </view>
+    <view class="b">
+      <view class="item" wx:for="{{groupons}}" wx:for-index="index" wx:for-item="item" wx:key="id">
+        <navigator url="/pages/goods/goods?id={{item.id}}">
+          <image class="img" src="{{item.picUrl}}" background-size="cover"></image>
+          <view class="right">
+            <view class="text">
+              <view class="header">
+                <text class="name">{{item.name}}</text>
+                <view class="capsule-tag">
+                  <zan-capsule color="#a78845" leftText="{{item.grouponMember}}人成团" rightText="立减{{item.grouponDiscount}}" />
+                </view>
+              </view>
+              <text class="desc">{{item.brief}}</text>
+              <view class="price">
+                <view class="counterPrice">现价：￥{{item.retailPrice}}</view>
+                <view class="retailPrice">团购价：￥{{item.grouponPrice}}</view>
+              </view>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>
