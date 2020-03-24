@@ -161,3 +161,11 @@ page {
   color: red;
   font-size: 30rpx;
 }
+
+.column_item {
+  height: 140rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}

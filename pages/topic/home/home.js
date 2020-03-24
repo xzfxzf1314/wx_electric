@@ -1,41 +1,20 @@
 // pages/topic/home/home.js
+const util = require('../../../utils/util.js');
+const api = require('../../../config/api.js');
+const user = require('../../../utils/user.js');
+
+//获取应用实例
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    levelDesc:'',
-    subjectTitle: '',
-
-    list: [
-      {
-        sheetTitle: '第一篇 篇章111',
-        levelId: 1,
-        sheetId: 1,
-        subjectId: 1
-      },
-      {
-        sheetTitle: '第二篇 篇章222篇章222篇章222篇章222篇章222篇章222篇章222篇章222篇章222篇章222篇章222篇章222真机调试一大堆问题，到底行不行啊啊，哎，好烦呀',
-        levelId: 2,
-        sheetId: 2,
-        subjectId: 2
-      },
-      {
-        sheetTitle: '第三篇 篇章333',
-        levelId: 3,
-        sheetId: 3,
-        subjectId: 3
-      },
-      {
-        sheetTitle: '第四篇 篇章444',
-        levelId: 4,
-        sheetId: 4,
-        subjectId: 4
-      }
-      
-    ]
-
+    levelTitle: "",
+    subjectTitle: "",
+    subjectId: 0,
+    list: [],
   },
 
   /**
@@ -56,23 +35,36 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var levelDesc1 = wx.getStorageSync("levelDesc")
-    var subjectTitle1 = wx.getStorageSync("subjectTitle")
-    this.setData(
-      {
-        levelDesc: levelDesc1,
-        subjectTitle: subjectTitle1
+    let that = this
+    let levelTitle1 = wx.getStorageSync("levelTitle")
+    let subjectTitle1 = wx.getStorageSync("subjectTitle")
+    var levelId = wx.getStorageSync("levelId")
+    var subjectId1 = wx.getStorageSync("subjectId")
+    this.setData({
+        levelTitle: levelTitle1,
+        subjectTitle: subjectTitle1,
+        subjectId: subjectId1,
       }
     )
 
-    var levelId = wx.getStorageSync("levelId")
-    var subjectId = wx.getStorageSync("subjectId")
-    var listData = this.data.list
-    for (var index in listData) {
-        
-    }
+    
+    
+    this.getSheetData()
+    
+  },
 
-    console.log(levelDesc)
+  getSheetData: function () {
+    let that = this;
+    util.request(api.SheetListUrl, {
+      subjectId: that.data.subjectId
+    }).then(function (res) {
+      console.log(res)
+      if (res.errno === 0) {
+        that.setData({
+          list: res.data.items,
+        });
+      }
+    });
   },
 
   /**
