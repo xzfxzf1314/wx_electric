@@ -23,6 +23,8 @@
     "pages/commentPost/commentPost",
     "pages/topic/home/home",
     "pages/topic/choose/choose",
+    "pages/topic/chapter/chapter",
+    "pages/topic/select/select",
     "pages/topicComment/topicComment",
     "pages/topicDetail/topicDetail",
     "pages/topicCommentPost/topicCommentPost",

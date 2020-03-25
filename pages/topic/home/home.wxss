@@ -40,20 +40,50 @@
   border-bottom:0.5px solid #e0e0e07c;
   align-items: center;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin: auto;
-  text-align: left;
   justify-content: center;
   width: 710rpx;
 }
 
-.list .item .sheet_textarea {
+.list .item .item-content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 710rpx;
+}
+
+.item-progress-parent {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: row;
+}
+
+.item-progress-title {
+  padding-top: 5px;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.list .item .item-content .item-title {
   height: 100%;
   background: white;
-  border-radius: 5px;
-  border-width: 0px;
   width: 100%;
   font-size: 35rpx;
   align-items: center;
+}
+
+.list .item .item-content .item-progress {
+  margin-top: 10px;
+  width: 50%;
+  justify-content: center;
+  background-color: #ececec;
+}
+
+.list .item .right-icon {
+  margin-left: 10px;
+  width: 15px;
+  height: 15px;
 }
 

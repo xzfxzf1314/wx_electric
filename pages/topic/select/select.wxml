@@ -1,0 +1,90 @@
+<view class="container">
+
+  <swiper class="select-parent" bindchange="topicChange">
+    <block wx:for="{{list}}" wx:key="id" wx:for-item="item" current="{{current}}">
+      <swiper-item class="select-item">
+
+        <scroll-view class="scroll" scroll-y="true">
+          <view class="topic-type-parent">
+            <view class="topic-type-parent-left">
+              <text class="topic-type-parent-type">{{item.type === 2 ? '单选题' : '多选题'}}</text>
+              <text class="topic-type-parent-num">{{'(' + (current + 1) + '/' + sum + ')'}}</text>
+            </view>
+
+            <view class="topic-type-parent-right">
+              <image src="/static/images/icon_right.png"></image>
+              <text>{{right}}</text>
+              <image src="/static/images/icon_wrong.png"></image>
+              <text>{{wrong}}</text>
+            </view>
+          </view>
+
+          <view class="divLine"></view>
+
+          <view class="topic-desc">
+            <text>{{item.selectTitle}}</text>
+            <view class="topic-option">
+              <image src="/static/images/icon_not_select.png"></image>
+              <text>{{item.optionA}}</text>
+            </view>
+
+            <view class="topic-option">
+              <image src="/static/images/icon_not_select.png"></image>
+              <text>{{item.optionB}}</text>
+            </view>
+
+            <view class="topic-option">
+              <image src="/static/images/icon_not_select.png"></image>
+              <text>{{item.optionC}}</text>
+            </view>
+
+            <view class="topic-option">
+              <image src="/static/images/icon_not_select.png"></image>
+              <text>{{item.optionD}}</text>
+            </view>
+          </view>
+
+          <view class="topic-answer-parent">
+            <text>{{'正确答案: ' + item.answer}}</text>
+            <view class="topic-answer-collect">
+              <image src="{{item.collect ? '/static/images/icon_collect.png' : '/static/images/icon_uncollect.png'}}"></image>
+              <text>收藏</text>
+            </view>
+          </view>
+
+          <view class="topic-explain-parent">
+            <view class="topic-explain-title">
+              <view class="topic-explain-title-tip"></view>
+              <text>题解</text>
+            </view>
+
+            <view class="topic-explain-content">
+              <text>{{item.explain}}</text>
+            </view>
+          </view>
+
+          <view class="divLine"></view>
+
+          <view class="topic-note-parent">
+
+            <view class="topic-explain-title">
+              <view class="topic-explain-title-tip"></view>
+              <text>我的笔记</text>
+            </view>
+
+            <i-input i-class = "input" autoheight="false" maxlength="140" :rows="4" value="{{ item.note }}" type="textarea" mode="normal" placeholder="记录你的笔记" />
+
+          </view>
+
+        </scroll-view>
+
+
+
+
+
+      </swiper-item>
+    </block>
+
+  </swiper>
+
+</view>

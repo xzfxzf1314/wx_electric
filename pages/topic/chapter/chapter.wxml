@@ -1,0 +1,20 @@
+<!-- 选择级别和科目列表的界面 -->
+
+<view class="list">
+
+  <view class="item" wx:for="{{listData}}" wx:key="levelId" wx:for-item="item" 
+  data-levelId="{{item.levelId}}" data-subjectId="{{item.subjectId}}" 
+  data-levelDesc="{{item.levelDesc}}" data-subjectTitle="{{item.subjectTitle}}" data-sheetId="{{item.sheetId}}" bindtap="goToSelect">
+    <view class="item-content">
+        <text class="item-title" hover-class="hover">{{item.chapterTitle}}</text>
+        <view class="item-progress-parent">
+          <progress class="item-progress" stroke-width="1px" percent="{{(item.doneSum * 100 / item.sum)}}" backgroundColor="#ececec" activeColor="red"></progress>
+          <text class="item-progress-title">{{item.doneSum + "/" + item.sum}}</text>
+        </view>
+      </view>
+      <image class="right-icon" src="/static/images/arrow.png"></image>
+  </view>
+
+
+
+</view>

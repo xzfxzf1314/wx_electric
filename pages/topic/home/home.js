@@ -13,25 +13,33 @@ Page({
         sheetTitle: '第一篇 篇章111',
         levelId: 1,
         sheetId: 1,
-        subjectId: 1
+        subjectId: 1,
+        doneSum: 10,
+        sum: 80,
       },
       {
         sheetTitle: '第二篇 篇章222篇章222篇章222篇章222篇章222篇章222篇章222篇章222篇章222篇章222篇章222篇章222真机调试一大堆问题，到底行不行啊啊，哎，好烦呀',
         levelId: 2,
         sheetId: 2,
-        subjectId: 2
+        subjectId: 2,
+        doneSum: 10,
+        sum: 20,
       },
       {
         sheetTitle: '第三篇 篇章333',
         levelId: 3,
         sheetId: 3,
-        subjectId: 3
+        subjectId: 3,
+        doneSum: 30,
+        sum: 60,
       },
       {
         sheetTitle: '第四篇 篇章444',
         levelId: 4,
         sheetId: 4,
-        subjectId: 4
+        subjectId: 4,
+        doneSum: 80,
+        sum: 120,
       }
       
     ]
@@ -72,7 +80,7 @@ Page({
         
     }
 
-    console.log(levelDesc)
+    // console.log(levelDesc)
   },
 
   /**
@@ -110,10 +118,22 @@ Page({
 
   },
 
-
   goToChoose(e) {
     wx.navigateTo({
       url: "/pages/topic/choose/choose",
+    })
+  },
+
+  selectChapter(e) {
+
+    var dataset = e.currentTarget.dataset
+
+    console.log(JSON.stringify(dataset))
+
+    var subjectid = dataset.subjectid
+
+    wx.navigateTo({
+      url: "/pages/topic/chapter/chapter?subjectId=" + subjectid,
     })
   }
 

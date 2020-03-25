@@ -121,7 +121,7 @@ Page({
 
   select: function(e) {
     var dataset = e.currentTarget.dataset
-    console.log(dataset)
+    // console.log(dataset)
 
     wx.setStorageSync('levelId', dataset.levelid)
     wx.setStorageSync('levelDesc', dataset.leveldesc)

@@ -143,7 +143,8 @@ Page({
 
   goTopic(e) {
     wx.navigateTo({
-      url: "/pages/topic/home/home",
+      url: "/pages/topic/select/select",
+      // url: "/pages/topic/home/home",
     })
   },
 

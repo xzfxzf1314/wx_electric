@@ -1,0 +1,162 @@
+page {
+  overflow: hidden;
+  background: white;
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  background: white;
+  width: 100%;
+  height: 100vh;
+}
+
+.container .select-parent {
+  width: 100%;
+  display: block;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container .select-parent .select-item {
+  width: 100%;
+  height: 100vh;
+}
+
+.scroll {
+  width: 100%;
+  height: 100vh;
+}
+
+.topic-type-parent {
+  /* background-color: blue; */
+  align-items: center;
+  padding: 30rpx 30rpx;
+  /* height: 40px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.topic-type-parent-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topic-type-parent-right text {
+
+  margin-right: 5px;
+}
+
+.topic-type-parent-right image {
+  margin-right: 5px;
+  width: 12px;
+  height: 12px;
+}
+
+.divLine {
+  background: #ececec70;
+  width: 100%;
+  height: 20rpx;
+}
+
+.topic-desc {
+  align-items: left;
+  padding: 30rpx 30rpx;
+  /* height: 40px; */
+  display: flex;
+  flex-direction: column;
+}
+
+.topic-option {
+  margin-top: 30rpx;
+  align-items: center;
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.topic-option text {
+  font-size: 15px;
+  width: 100%;
+  height: 100%;
+  word-break:break-all;
+}
+
+.topic-option image {
+  justify-content: center;
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+}
+
+.topic-answer-parent {
+  background: #ececec70;
+  align-items: center;
+  padding: 30rpx 30rpx;
+  /* height: 40px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.topic-answer-collect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topic-answer-collect image {
+  margin-right: 5px;
+  width: 18px;
+  height: 18px;
+}
+
+.topic-explain-parent {
+  display: flex;
+  align-items: left;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.topic-explain-content {
+  padding: 0 30rpx;
+}
+
+.topic-explain-title {
+  /* background-color: blue; */
+  align-items: center;
+  padding: 30rpx 30rpx;
+  /* height: 40px; */
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+.topic-explain-title-tip {
+  margin-right: 10px;
+  width: 4px;
+  height: 20px;
+  background: red;
+}
+
+.topic-note-parent {
+  width: 100%;
+  display: flex;
+  align-items: left;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.textarea_bg {
+  padding: 30rpx 30rpx;
+}
+
+.input {
+  height: 600rpx;
+  border-radius: 10rpx;
+  background:blue;
+}

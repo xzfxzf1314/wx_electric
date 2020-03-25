@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "i-divider": "../../dist/divider/index",
+    "i-panel": "../../dist/panel/index",
+    "i-input": "../../dist/input/index"
+  },
+  "navigationBarTitleText": "题库",
+  "backgroundColor": "#ffffff",
+  "enablePullDownRefresh": false
+}

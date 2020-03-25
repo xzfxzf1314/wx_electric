@@ -8,13 +8,16 @@
   <view class="list">
 
     <view class="item" wx:for="{{list}}" wx:key="levelId" wx:for-item="item" data-levelId="{{item.levelId}}" data-subjectId="{{item.subjectId}}" data-sheetId="{{item.sheetId}}" data-levelDesc="{{item.levelDesc}}" data-subjectTitle="{{item.subjectTitle}}"
-      bindtap="select">
-
-      <text class="sheet_textarea" hover-class="hover">{{item.sheetTitle}}</text>
+      bindtap="selectChapter">
+      <view class="item-content">
+        <text class="item-title" hover-class="hover">{{item.sheetTitle}}</text>
+        <view class="item-progress-parent">
+          <progress class="item-progress" stroke-width="1px" percent="{{(item.doneSum * 100 / item.sum)}}" backgroundColor="#ececec" activeColor="red"></progress>
+          <text class="item-progress-title">{{item.doneSum + "/" + item.sum}}</text>
+        </view>
+      </view>
+      <image class="right-icon" src="/static/images/arrow.png"></image>
     </view>
-
-
-
   </view>
 
 </view>
