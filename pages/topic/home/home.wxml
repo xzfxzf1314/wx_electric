@@ -1,8 +1,31 @@
 <view class="container">
   <view class='subject_container' bindtap="goToChoose">
     <image src="/static/images/subject.png"></image>
-    <text bindtap="goToChoose">{{levelDesc + " " +subjectTitle}}</text>
+    <text bindtap="goToChoose">{{levelTitle + " " +subjectTitle}}</text>
     <image src="/static/images/subject2.png"></image>
+  </view>
+
+  <view class="m-menu">
+    <navigator class="item" bindtap="goNewerArea">
+      <image src="/static/images/icon_easy_mistake.png" background-size="cover"></image>
+      <text>易错</text>
+    </navigator>
+
+    <navigator class="item" bindtap="goTopic">
+      <image src="/static/images/icon_jingxuan.png" background-size="cover"></image>
+      <text>精选</text>
+    </navigator>
+
+    <navigator class="item">
+      <image src="/static/images/icon_wrong.png" background-size="cover"></image>
+      <text>错题</text>
+    </navigator>
+
+    <navigator class="item">
+      <image src="/static/images/icon_topic_collect.png" background-size="cover"></image>
+      <text>收藏</text>
+    </navigator>
+
   </view>
 
   <view class="list">

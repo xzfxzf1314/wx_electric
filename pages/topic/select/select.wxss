@@ -124,6 +124,7 @@ page {
 
 .topic-explain-content {
   padding: 0 30rpx;
+  padding-bottom: 10px;
 }
 
 .topic-explain-title {
@@ -151,12 +152,31 @@ page {
   flex-direction: column;
 }
 
-.textarea_bg {
+.note_input {
   padding: 30rpx 30rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  min-height: 300rpx;
+  height: 300rpx;
+  border-radius: 10rpx;
+  background: #ececec70;
 }
 
-.input {
-  height: 600rpx;
-  border-radius: 10rpx;
-  background:blue;
+/* .note-button {
+  width: 100%;
+} */
+
+.note-button-parent {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 30rpx;
+  /* background-color: blue; */
 }
+
+/* .option_group {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+} */

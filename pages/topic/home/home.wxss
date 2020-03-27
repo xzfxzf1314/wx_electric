@@ -15,6 +15,7 @@
 
 .container .subject_container {
   align-items: center;
+  background-color: white;
   /* background: red; */
   width: 100%;
   padding: 10px;
@@ -72,6 +73,46 @@
   width: 100%;
   font-size: 35rpx;
   align-items: center;
+}
+
+.m-menu {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  padding-bottom: 0rpx;
+  padding-top: 35rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+
+.m-menu .item {
+  box-sizing: border-box;
+  background-color: white;
+  flex: 0 0 25%;
+  height: 60px;
+  /* border: 1px solid red; */
+  /* width: 150rpx; */
+  /* height: 126rpx; */
+}
+
+.m-menu image {
+  display: block;
+  width: 70rpx;
+  height: 70rpx;
+  margin: 0 auto;
+  margin-bottom: 15rpx;
+}
+
+.m-menu text {
+  display: block;
+  font-size: 28rpx;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 1;
+  color: gray;
 }
 
 .list .item .item-content .item-progress {

@@ -9,6 +9,8 @@ var WxApiRoot = 'http://localhost:8080/wx/';
 // var WxApiRoot = 'https://www.menethil.com.cn/wx/';
 
 module.exports = {
+  ChooseUrl: WxApiRoot + 'chooseSubject/list', //选择科目url
+  SheetListUrl: WxApiRoot + 'chooseSheet/list', //选择篇章list url
   IndexUrl: WxApiRoot + 'home/index', //首页数据接口
   CatalogList: WxApiRoot + 'catalog/index', //分类目录全部分类数据接口
   CatalogCurrent: WxApiRoot + 'catalog/current', //分类目录当前分类数据接口

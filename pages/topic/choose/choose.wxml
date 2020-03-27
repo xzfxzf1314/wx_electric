@@ -4,9 +4,9 @@
 
   <view class="item" wx:for="{{listData}}" wx:key="levelId" wx:for-item="item" 
   data-levelId="{{item.levelId}}" data-subjectId="{{item.subjectId}}" 
-  data-levelDesc="{{item.levelDesc}}" data-subjectTitle="{{item.subjectTitle}}" bindtap="select" >
+  data-levelTitle="{{item.levelTitle}}" data-subjectTitle="{{item.subjectTitle}}" bindtap="select" >
 
-    <button class="{{item.isSelect ? 'btn-select' : 'btn'}}" hover-class="hover">{{item.levelDesc + ' ' + item.subjectTitle}}</button>
+    <button class="{{item.isSelect ? 'btn-select' : 'btn'}}" hover-class="hover">{{item.levelTitle + ' ' + item.subjectTitle}}</button>
   </view>
 
 

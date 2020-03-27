@@ -1,52 +1,45 @@
 // pages/topic/choose/choose.js
+const util = require('../../../utils/util.js');
+const api = require('../../../config/api.js');
+const user = require('../../../utils/user.js');
+
+//获取应用实例
+const app = getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    listData: [{
-        levelId:1,
-        subjectId:1,
-        levelDesc: "测试1",
-        subjectTitle: "主题1",
-        isSelect: false
-      },
-      {
-        levelId: 2,
-        subjectId: 2,
-        levelDesc: "测试2",
-        subjectTitle: "主题2",
-        isSelect: false
-      },
-      {
-        levelId: 3,
-        subjectId: 3,
-        levelDesc: "测试3",
-        subjectTitle: "主题3",
-        isSelect: false
-      },
-      {
-        levelId: 4,
-        subjectId: 4,
-        levelDesc: "测试4",
-        subjectTitle: "主题4",
-        isSelect: false
-      },
-      {
-        levelId: 5,
-        subjectId: 5,
-        levelDesc: "测试5",
-        subjectTitle: "主题5",
-        isSelect: false
-      }
-    ],
+    listData: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    
+
+    this.getChooseData();
+
+    
+  },
+
+  getChooseData: function() {
+    let that = this;
+    util.request(api.ChooseUrl).then(function (res) {
+      console.log(res)
+      if (res.errno === 0) {
+        that.setData({
+          listData: res.data.items,
+        });
+        that.refresh();
+      }
+    });
+  },
+
+  refresh: function() {
     var levelId = wx.getStorageSync("levelId")
     var subjectId = wx.getStorageSync("subjectId")
 
@@ -66,7 +59,7 @@ Page({
       })
     }
 
-    
+    console.log(JSON.stringify(this.data.listData))
   },
 
   /**
@@ -124,7 +117,7 @@ Page({
     // console.log(dataset)
 
     wx.setStorageSync('levelId', dataset.levelid)
-    wx.setStorageSync('levelDesc', dataset.leveldesc)
+    wx.setStorageSync('levelTitle', dataset.leveltitle)
     wx.setStorageSync('subjectId', dataset.subjectid)
     wx.setStorageSync('subjectTitle', dataset.subjecttitle)
 

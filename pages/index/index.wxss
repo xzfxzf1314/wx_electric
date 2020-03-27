@@ -16,14 +16,14 @@
   flex-flow: row wrap;
   align-content: flex-start;
   padding-bottom: 0rpx;
-  padding-top: 35rpx;
+  padding-top: 50rpx;
 }
 
 .m-menu .item {
   box-sizing: border-box;
   background-color: white;
   flex: 0 0 25%;
-  height: 60px;
+  height: 80px;
   /* border: 1px solid red; */
   /* width: 150rpx; */
   /* height: 126rpx; */
@@ -34,7 +34,7 @@
   width: 80rpx;
   height: 80rpx;
   margin: 0 auto;
-  margin-bottom: 12rpx;
+  margin-bottom: 10px;
 }
 
 .m-menu text {

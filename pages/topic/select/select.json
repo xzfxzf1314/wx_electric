@@ -2,7 +2,14 @@
   "usingComponents": {
     "i-divider": "../../dist/divider/index",
     "i-panel": "../../dist/panel/index",
-    "i-input": "../../dist/input/index"
+    "i-input": "../../dist/input/index",
+    "i-button": "../../dist/button/index",
+    "i-radio-group": "../../dist/radio-group/index",
+    "i-radio": "../../dist/radio/index",
+    "wux-radio-group": "../../wux/radio-group/index",
+    "wux-radio": "../../wux/radio/index",
+    "wux-checkbox-group": "../../wux/checkbox-group/index",
+    "wux-checkbox": "../../wux/checkbox/index"
   },
   "navigationBarTitleText": "题库",
   "backgroundColor": "#ffffff",

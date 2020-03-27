@@ -1,0 +1,24 @@
+var convert = {
+  answer: function (value) {
+    var newArr = value.map(function (item, index, arr) {
+      if (item == 0) {
+        return 'A'
+      }
+      if (item == 1) {
+        return 'B'
+      }
+      if (item == 2) {
+        return 'C'
+      }
+      if (item == 3) {
+        return 'D'
+      }
+      return item;
+    })
+    return newArr
+  },
+}
+
+module.exports = {
+  answer: convert.answer
+}

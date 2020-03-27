@@ -1,3 +1,4 @@
+<wxs module="tools" src="../../../wxs/tools.wxs"></wxs>
 <view class="container">
 
   <swiper class="select-parent" bindchange="topicChange">
@@ -21,59 +22,55 @@
 
           <view class="divLine"></view>
 
-          <view class="topic-desc">
-            <text>{{item.selectTitle}}</text>
-            <view class="topic-option">
-              <image src="/static/images/icon_not_select.png"></image>
-              <text>{{item.optionA}}</text>
-            </view>
+          <wux-checkbox-group name="a" value="{{ currentAnswer }}" title="{{item.selectTitle}}" bind:change="selectOption">
+                <wux-checkbox color="balanced" title="{{ item.optionA }}" value="0" />
+                <wux-checkbox color="balanced" title="{{ item.optionB }}" value="1" />
+                <wux-checkbox color="balanced" title="{{ item.optionC }}" value="2" />
+                <wux-checkbox color="balanced" title="{{ item.optionD }}" value="3" />
+          </wux-checkbox-group>
 
-            <view class="topic-option">
-              <image src="/static/images/icon_not_select.png"></image>
-              <text>{{item.optionB}}</text>
-            </view>
-
-            <view class="topic-option">
-              <image src="/static/images/icon_not_select.png"></image>
-              <text>{{item.optionC}}</text>
-            </view>
-
-            <view class="topic-option">
-              <image src="/static/images/icon_not_select.png"></image>
-              <text>{{item.optionD}}</text>
-            </view>
+        
+          <view class="note-button-parent" wx:if="{{item.type  !== 2}}">
+            <i-button i-class="note-button" bind:click="handleClick" type="primary" size="small" shape="circle">提交答案</i-button>
           </view>
 
-          <view class="topic-answer-parent">
-            <text>{{'正确答案: ' + item.answer}}</text>
-            <view class="topic-answer-collect">
-              <image src="{{item.collect ? '/static/images/icon_collect.png' : '/static/images/icon_uncollect.png'}}"></image>
-              <text>收藏</text>
-            </view>
-          </view>
+          <view class="answer-parent" wx:if="{{item.isAnswer}}">
 
-          <view class="topic-explain-parent">
-            <view class="topic-explain-title">
-              <view class="topic-explain-title-tip"></view>
-              <text>题解</text>
+            <view class="topic-answer-parent">
+              <text>正确答案：{{tools.answer(item.answer)}}</text>
+              <view class="topic-answer-collect">
+                <image src="{{item.collect ? '/static/images/icon_collect.png' : '/static/images/icon_uncollect.png'}}"></image>
+                <text>收藏</text>
+              </view>
             </view>
 
-            <view class="topic-explain-content">
-              <text>{{item.explain}}</text>
-            </view>
-          </view>
+            <view class="topic-explain-parent">
+              <view class="topic-explain-title">
+                <view class="topic-explain-title-tip"></view>
+                <text>题解</text>
+              </view>
 
-          <view class="divLine"></view>
-
-          <view class="topic-note-parent">
-
-            <view class="topic-explain-title">
-              <view class="topic-explain-title-tip"></view>
-              <text>我的笔记</text>
+              <view class="topic-explain-content">
+                <text>{{item.explain}}</text>
+              </view>
             </view>
 
-            <i-input i-class = "input" autoheight="false" maxlength="140" :rows="4" value="{{ item.note }}" type="textarea" mode="normal" placeholder="记录你的笔记" />
+            <view class="divLine"></view>
 
+            <view class="topic-note-parent">
+
+              <view class="topic-explain-title">
+                <view class="topic-explain-title-tip"></view>
+                <text>我的笔记</text>
+              </view>
+
+              <textarea class="note_input" value="{{ item.note }}" placeholder="记录你的笔记" />
+
+            </view>
+
+            <view class="note-button-parent">
+              <i-button i-class="note-button" bind:click="handleClick" type="error" shape="circle">保存</i-button>
+            </view>
           </view>
 
         </scroll-view>

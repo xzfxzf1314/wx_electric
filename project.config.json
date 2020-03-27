@@ -9,7 +9,7 @@
 		"uglifyFileName": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.4.0",
+	"libVersion": "2.10.3",
 	"appid": "wx54717c5bdea953d9",
 	"projectname": "electric-wx",
 	"simulatorType": "wechat",

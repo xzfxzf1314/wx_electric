@@ -8,6 +8,11 @@
 
   <view class='separate'></view>
 
+  <view class='column_item' bindtap='goCollect'>
+      <image class='user_column_item_image' src='/static/images/icon_collect.png'></image>
+      <view class='user_column_item_text'>我的收藏</view>
+    </view>
+
   <view class='user_area'>
     <view class='user_row' bindtap='goOrder'>
       <view class='user_row_left'>我的订单</view>
